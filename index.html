@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS -->
+    <style>
+      li {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h1>星座運勢ランキング</h1>
+        <div v-if = !showResult>
+        <button @click="shuffle">運勢を見る!</button>
+        </div>
+        <div  v-if = showResult>
+          <div>
+            <h2>ベスト3</h2>
+            <ui>
+              <li v-for="zodiac in getBest3" :key="zodiac.id">
+                <div style="display: inline-block; padding: 10">
+                  <img
+                    v-bind:src="zodiac.path"
+                    width="100"
+                    height="100"
+                  /><br />
+                  <h3>{{ zodiac.rank}}位: {{ zodiac.name }}</h3>
+                </div>
+              </li>
+            </ui>
+          </div>
+          <br />
+          <div>
+            <h2>ワースト3</h2>
+            <ui>
+              <li v-for="zodiac in getWorst3" :key="zodiac.id">
+                <div style="display: inline-block; padding: 10">
+                  <img
+                    v-bind:src="zodiac.path"
+                    width="100"
+                    height="100"
+                  /><br />
+                  <h3>{{ zodiac.rank}}位: {{ zodiac.name }}</h3>
+                </div>
+              </li>
+            </ui>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="./main.js" defer></script>
+  </body>
+</html>
