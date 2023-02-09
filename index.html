@@ -7,16 +7,19 @@
       li {
         display: inline;
       }
+      [v-cloak] {
+        display: none;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <div>
         <h1>星座運勢ランキング</h1>
-        <div v-if = !showResult>
+        <div v-if = !showResult v-cloak>
         <button @click="shuffle">運勢を見る!</button>
         </div>
-        <div  v-if = showResult>
+        <div  v-if = showResult v-cloak>
           <div>
             <h2>ベスト3</h2>
             <ui>
