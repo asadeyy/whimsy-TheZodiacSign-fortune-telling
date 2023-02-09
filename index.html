@@ -26,43 +26,44 @@
         font-family: "Kaisei Decol", serif;
       }
       .fuwafuwa {
-      animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
-      background: url(../img/ico-apple.svg) no-repeat center center / 60px auto;
-      display: inline-block;
-      transition: 1.5s ease-in-out;
-      width: 150px;
-      margin-top: 15px;
+        animation: fuwafuwa 3s infinite ease-in-out 0.8s alternate;
+        background: url(../img/ico-apple.svg) no-repeat center center / 60px
+          auto;
+        display: inline-block;
+        transition: 1.5s ease-in-out;
+        width: 150px;
+        margin-top: 15px;
       }
 
       @keyframes fuwafuwa {
         0% {
-          transform:translate(0, 0) rotate(0deg);
+          transform: translate(0, 0) rotate(0deg);
         }
         25% {
-          transform:translate(0, -7px) rotate(-7deg);
+          transform: translate(0, -7px) rotate(-7deg);
         }
         100% {
-          transform:translate(0, 0) rotate(7deg);
+          transform: translate(0, 0) rotate(7deg);
         }
       }
-      .fadeUp{
-animation-name:fadeUpAnime;
-animation-duration:0.5s;
-animation-fill-mode:forwards;
-opacity:0;
-}
+      .fadeUp {
+        animation-name: fadeUpAnime;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
 
-@keyframes fadeUpAnime{
-  from {
-    opacity: 0;
-  transform: translateY(100px);
-  }
+      @keyframes fadeUpAnime {
+        from {
+          opacity: 0;
+          transform: translateY(100px);
+        }
 
-  to {
-    opacity: 1;
-  transform: translateY(0);
-  }
-}
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
   <body
@@ -74,9 +75,9 @@ opacity:0;
         <br />
         <div v-if="!showResult" v-cloak class="text-center">
           <button @click="shuffle" class="btn btn-outline-light btn-lg mb-4">
-            今すぐ運勢を見る!
-          </button><br>
-          <img class="fuwafuwa" src="images/suishou.png"/>
+            今すぐ運勢を見る!</button
+          ><br />
+          <img class="fuwafuwa" src="images/suishou.png" />
         </div>
         <div v-if="showResult" v-cloak class="fadeUp">
           <div>
