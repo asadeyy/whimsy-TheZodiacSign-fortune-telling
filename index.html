@@ -71,7 +71,7 @@
   >
     <div id="app">
       <div>
-        <h1>星座運勢ランキング</h1>
+        <h1 style="margin-top: 10%">星座運勢ランキング</h1>
         <br />
         <div v-if="!showResult" v-cloak class="text-center">
           <button @click="shuffle" class="btn btn-outline-light btn-lg mb-4">
@@ -108,6 +108,15 @@
                   /><br />
                   <h3>{{ zodiac.rank}}位: {{ zodiac.name }}</h3>
                 </div>
+              </li>
+            </ui>
+          </div>
+          <br />
+          <div>
+            <h4 style="margin-top: 20">全体ランキング</h4>
+            <ui>
+              <li v-for="zodiac in theZodiacSigns" :key="zodiac.id">
+                <p>{{zodiac.rank}}位: {{zodiac.name}}</p>
               </li>
             </ui>
           </div>
